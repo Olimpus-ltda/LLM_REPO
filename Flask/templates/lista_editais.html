@@ -1,0 +1,23 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Editais</title>
+</head>
+<body>
+    <h1>Lista de Editais</h1>
+    {% for edital in editais %}
+        <div style="border:1px solid #ccc; padding:10px; margin-bottom:10px;">
+            <strong>ID:</strong> {{ edital.id }}<br>
+            <strong>PDF:</strong> {{ edital.arquivo_pdf }}<br>
+            <strong>Prompt:</strong> {{ edital.prompt }}<br>
+            <strong>Processado em:</strong> {{ edital.data_processamento }}<br>
+            <strong>Conteúdo:</strong>
+            <pre>{{ edital.conteudo_formatado }}</pre>
+        </div>
+    {% else %}
+        <p>Nenhum edital encontrado.</p>
+    {% endfor %}
+</body>
+</html>
